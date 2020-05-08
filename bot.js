@@ -40,7 +40,7 @@ client.on('message', message => {
     if (message.content.startsWith(`${prefix}status`)) {
         if (!message.member.hasPermission('ADMINISTRATOR')) return;
         const args = message.content.slice(prefix.length).split(/ +/);
-        client.user.setActivity(args, { type: 'PLAYING' })
+        client.user.setActivity(args[0], { type: 'PLAYING' })
             .then(presence => console.log(`activity set to ${presence.activities[0].name}`))
             .catch(console.error);
     }
