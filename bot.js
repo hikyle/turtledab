@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {
+client.once('ready', () => {
     console.log('ready');
+    client.user.setActivity('do NOT google turtle dab', { type: 'CUSTOM_STATUS' })
+        .then(presence => console.log('acitivty set to ${presence.activities[0].name}'))
+        .catch(console.error);
 });
 
 client.on('guildMemberAdd', member => {
