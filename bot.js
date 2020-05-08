@@ -12,10 +12,8 @@ client.on('guildMemberAdd', member => {
         console.log('channel not found');
         return;
     }
-
-    //channel.send('https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725 @${member}');
     
-    console.log('welcome @' + member.user.username + ' https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725');
+    channel.send('welcome @' + member.user.username + ' https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725');
 });
 
 client.on('guildMemberRemove', member => {
@@ -26,8 +24,7 @@ client.on('guildMemberRemove', member => {
         return;
     }
 
-    //channel.send('${member} has left https://tenor.com/view/peace-gif-9727828');
-    console.log(member.user.username + ' ' + 'has left https://tenor.com/view/peace-gif-9727828');
+    channel.send(member.user.username + ' ' + 'has left https://tenor.com/view/peace-gif-9727828');
 });
 
 client.login(process.env.BOT_TOKEN);
