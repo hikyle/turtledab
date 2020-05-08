@@ -27,4 +27,11 @@ client.on('guildMemberRemove', member => {
     channel.send(member.user.username + ' ' + 'has left https://tenor.com/view/peace-gif-9727828');
 });
 
+client.on('message', message => {
+    if (message.content.includes('true'.toLowerCase())) {
+        const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'TRUE');
+        message.react(emoji);
+    }
+});
+
 client.login(process.env.BOT_TOKEN);
