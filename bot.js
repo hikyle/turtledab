@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
     }
     
     //channel.send('welcome @' + member.user.username + '#' + member.user.discriminator + ' https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725');
-    channel.send('welcome @' + member.user.id + ' ' + 'https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725');
+    channel.send('welcome <@' + member.user.id + '> ' + 'https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725');
 });
 
 client.on('guildMemberRemove', member => {
