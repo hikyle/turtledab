@@ -37,6 +37,11 @@ client.on('message', message => {
         message.react(emoji);
     }
 
+    if (message.content.includes('bravo'.toLowerCase()) || message.content.includes('ross'.toLowerCase())) {
+        const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'bravotf2');
+        message.react(emoji);
+    }
+
     if (message.content.startsWith(`${prefix}status`)) {
         if (!message.member.hasPermission('ADMINISTRATOR')) return;
         client.user.setActivity(message.content.replace(`${prefix}status `, ''), { type: 'PLAYING' })
