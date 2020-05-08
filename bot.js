@@ -3,8 +3,8 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
     console.log('ready');
-    client.user.setActivity('do NOT google turtle dab', { type: 'CUSTOM_STATUS' })
-        .then(presence => console.log('acitivty set to ${presence.activities[0].name}'))
+    client.user.setActivity('do NOT google turtle dab', { type: 'PLAYING' })
+        .then(presence => console.log(`acitivty set to ${presence.activities[0].name}`))
         .catch(console.error);
 });
 
