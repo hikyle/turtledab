@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const { prefix } = require('./config.json');
 
 client.once('ready', () => {
-    console.log('ready');
-    client.user.setActivity('do NOT google turtle dab', { type: 'PLAYING' })
+    /*    client.user.setActivity('do NOT google turtle dab', { type: 'PLAYING' })
         .then(presence => console.log(`acitivty set to ${presence.activities[0].name}`))
-        .catch(console.error);
+        .catch(console.error);*/
+    console.log('ready');
 });
 
 client.on('guildMemberAdd', member => {
@@ -34,6 +35,14 @@ client.on('message', message => {
     if (message.content.includes('true'.toLowerCase())) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'TRUE');
         message.react(emoji);
+    }
+
+    if (message.content.startsWith(`${prefix}status`)) {
+        if (!message.member.hasPermission('ADMINISTRATOR')) return;
+        const args = message.content.slice(prefix.length).split(/ +/);
+        client.user.setActivity(args, { type: 'PLAYING' })
+            .then(presence => console.log(`activity set to ${presence.activities[0].name}`))
+            .catch(console.error);
     }
 });
 
