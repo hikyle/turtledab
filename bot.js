@@ -40,7 +40,7 @@ client.on('message', message => {
     if (message.content.startsWith(`${prefix}status`)) {
         if (!message.member.hasPermission('ADMINISTRATOR')) return;
         client.user.setActivity(message.content.replace(`${prefix}status `, ''), { type: 'PLAYING' })
-            .then(presence => client.message.send(`activity set to ${presence.activities[0].name}`))
+            .then(presence => message.channel.send(`activity set to ${presence.activities[0].name}`))
             .catch(console.error);
     }
 });
