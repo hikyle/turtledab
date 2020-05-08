@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
     }
 
     //channel.send('https://tenor.com/view/forrest-gump-forrest-gump-wave-hello-gif-5576725 @${member}');
-    console.log(member);
+    console.log(member.user.username);
 });
 
 client.on('guildMemberRemove', member => {
@@ -26,7 +26,7 @@ client.on('guildMemberRemove', member => {
     }
 
     //channel.send('${member} has left https://tenor.com/view/peace-gif-9727828');
-    console.log(member);
+    console.log(member.user.username);
 });
 
 client.login(process.env.BOT_TOKEN);
