@@ -39,6 +39,11 @@ client.on('message', message => {
         message.react(emoji);
     }
 
+    if (message.content.includes('sova'.toLowerCase()) || message.content.includes('hanzo'.toLowerCase())) {
+        const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Pepega');
+        message.channel.send(emoji + '📣 CHALK DART');
+    }
+
     if (message.content.startsWith(`${prefix}status`)) {
         if (!message.member.hasPermission('ADMINISTRATOR')) return;
         client.user.setActivity(message.content.replace(`${prefix}status `, ''), { type: 'PLAYING' })
