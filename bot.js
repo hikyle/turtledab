@@ -3,9 +3,6 @@ const client = new Discord.Client();
 const { prefix } = require('./config.json');
 
 client.once('ready', () => {
-    /*    client.user.setActivity('do NOT google turtle dab', { type: 'PLAYING' })
-        .then(presence => console.log(`acitivty set to ${presence.activities[0].name}`))
-        .catch(console.error);*/
     console.log('ready');
 });
 
@@ -47,6 +44,10 @@ client.on('message', message => {
         client.user.setActivity(message.content.replace(`${prefix}status `, ''), { type: 'PLAYING' })
             .then(presence => message.channel.send(`activity set to ${presence.activities[0].name}`))
             .catch(console.error);
+    }
+
+    if (message.content.toLowerCase() === `${prefix}invite`) {
+        message.channel.send(process.env.INVITE_LINK);
     }
 });
 
