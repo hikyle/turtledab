@@ -40,9 +40,8 @@ client.on('message', message => {
     }
 
     if (message.content.includes('sova'.toLowerCase()) || message.content.includes('hanzo'.toLowerCase())) {
-        //const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Pepega');
-        //message.channel.send(emoji + '📣 CHALK DART');
-        message.channel.send(':Pepega:📣 CHALK DART');
+        const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Pepega');
+        message.channel.send(`${emoji}📣 CHALK DART`);
     }
 
     if (message.content.startsWith(`${prefix}status`)) {
