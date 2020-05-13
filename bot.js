@@ -29,17 +29,19 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('message', message => {
-    if (message.content.includes('true'.toLowerCase())) {
+    //if (message.content.includes('true'.toLowerCase())) {
+    if (message.content.toLowerCase().includes('true')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'TRUE');
         message.react(emoji);
     }
 
-    if (message.content.includes('bravo'.toLowerCase()) || message.content.includes('ross'.toLowerCase())) {
+    //if (message.content.includes('bravo'.toLowerCase()) || message.content.includes('ross'.toLowerCase())) {
+    if (message.content.toLowerCase().includes('bravo') || message.content.toLowerCase().includes('ross')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'bravotf2');
         message.react(emoji);
     }
 
-    if (message.content.includes('sova'.toLowerCase()) || message.content.includes('hanzo'.toLowerCase())) {
+    if (message.content.toLowerCase().includes('sova') || message.content.toLowerCase().includes('hanzo')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Pepega');
         message.channel.send(`${emoji} 📣 CHALK DART`);
     }
