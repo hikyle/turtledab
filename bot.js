@@ -32,19 +32,25 @@ client.on('message', message => {
     if (message.content.toLowerCase().includes('true')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'TRUE');
         message.react(emoji);
-        console.log(`${message.author.username} said ${message.content}`);
+        //console.log(`${message.author.username} said ${message.content}`);
     }
 
     if (message.content.toLowerCase().includes('bravo') || message.content.toLowerCase().includes('ross')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'bravotf2');
         message.react(emoji);
-        console.log(`${message.author.username} said ${message.content}`);
+        //console.log(`${message.author.username} said ${message.content}`);
     }
 
     if (message.content.toLowerCase().includes('sova') || message.content.toLowerCase().includes('hanzo')) {
         const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Pepega');
         message.channel.send(`${emoji} 📣 CHALK DART`);
-        console.log(`${message.author.username} said ${message.content}`);
+        //console.log(`${message.author.username} said ${message.content}`);
+    }
+
+    if (message.content.toLowerCase().includes('tman') || message.content.toLowerCase().includes('thanh')) {
+        const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'feelsnihaoman');
+        message.react(emoji);
+        //console.log(`${message.author.username} said ${message.content}`);
     }
 
     if (message.content.startsWith(`${prefix}status`)) {
