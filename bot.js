@@ -53,6 +53,11 @@ client.on('message', message => {
         //console.log(`${message.author.username} said ${message.content}`);
     }
 
+    if (message.content.toLowerCase().includes('bait')) {
+        message.channel.send('chuti fucKIN BAITER');
+        //console.log(`${message.author.username} said ${message.content}`);
+    }
+
     if (message.content.startsWith(`${prefix}status`)) {
         if (!message.member.hasPermission('ADMINISTRATOR')) return;
         client.user.setActivity(message.content.replace(`${prefix}status `, ''), { type: 'PLAYING' })
